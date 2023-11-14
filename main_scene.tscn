@@ -19,3 +19,6 @@ polygon = PackedVector2Array(34, 2, 35, 601, 687, 601, 688, -1, 720, 0, 720, 633
 
 [node name="RigidBody2D" parent="." instance=ExtResource("2_u2eu2")]
 position = Vector2(351, 309)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("2_u2eu2")]
+position = Vector2(381, 218)

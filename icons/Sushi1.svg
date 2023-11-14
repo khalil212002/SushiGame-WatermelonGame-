@@ -25,8 +25,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="0.72426347"
-     inkscape:cx="249.2187"
-     inkscape:cy="287.87866"
+     inkscape:cx="249.90906"
+     inkscape:cy="286.49795"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -63,7 +63,7 @@
        xlink:href="#pattern15-8"
        preserveAspectRatio="xMidYMid"
        id="pattern4"
-       patternTransform="matrix(0.3,0,0,0.3,445,105)"
+       patternTransform="matrix(0.27610144,0,0,0.27610144,418.1917,107.91138)"
        x="0"
        y="0" />
     <pattern
@@ -96,17 +96,17 @@
        cy="141.19373"
        r="69.226936" />
     <circle
-       style="fill:#b3b3b3;fill-opacity:1;stroke-width:0.245036"
+       style="fill:#b3b3b3;fill-opacity:1;stroke-width:0.225516"
        id="path1-3"
-       cx="108.38525"
-       cy="141.45802"
-       r="64.112549" />
+       cx="108.39231"
+       cy="141.46509"
+       r="59.005222" />
     <circle
-       style="fill:url(#pattern4);fill-opacity:1;stroke-width:0.245036"
+       style="fill:url(#pattern4);fill-opacity:1;stroke-width:0.225516"
        id="path1-3-6"
-       cx="108.56258"
-       cy="141.63541"
-       r="64.112549" />
+       cx="108.55551"
+       cy="141.62834"
+       r="59.005222" />
     <circle
        style="fill:#b44700;fill-opacity:1;stroke-width:0.115188"
        id="path1-3-6-7"
