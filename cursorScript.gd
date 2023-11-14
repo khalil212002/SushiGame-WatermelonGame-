@@ -1,14 +1,18 @@
 extends Node2D
 
+var rayCast:RayCast2D
+var line2d:Line2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	rayCast = get_node("RayCast2D")
+	line2d = get_node("Line2D")
+	line2d.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if(dragging):
+		line2d.points[1].y = rayCast.get_collision_point().y - global_position.y
 
 func _drop_ball():
 	var ball = preload("res://ball.tscn").instantiate()
@@ -17,17 +21,15 @@ func _drop_ball():
 
 var dragging = false
 func _input(event):
-	if(event is InputEventScreenTouch):
+	if(event is InputEventScreenTouch or event is InputEventMouseButton):
 		if(event.pressed):
 			dragging = true
+			line2d.show()
 		else:
 			if(dragging):
 				_drop_ball()
 			dragging = false
-			
-	elif(event is InputEventMouseButton):
-		if(event.pressed):
-			_drop_ball()
+			line2d.hide()
 		
 	if(event is InputEventMouseMotion):
 		var ball = get_node("Sprite2D")

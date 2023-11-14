@@ -22,6 +22,13 @@ polygon = PackedVector2Array(34, 2, 35, 601, 687, 601, 688, -1, 720, 0, 720, 633
 position = Vector2(365, 260)
 script = ExtResource("2_2glq3")
 
+[node name="Line2D" type="Line2D" parent="Cursor"]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 3.0
+
 [node name="Sprite2D" type="Sprite2D" parent="Cursor"]
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_ln5yu")
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor"]
+target_position = Vector2(0, 990)
