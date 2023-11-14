@@ -1,24 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://duth8emiaue0q"]
+[gd_scene load_steps=4 format=3 uid="uid://duth8emiaue0q"]
 
 [ext_resource type="Texture2D" uid="uid://cqdomjpb8k408" path="res://background.png" id="1_y5nhy"]
-[ext_resource type="PackedScene" uid="uid://co5lngcdyl3kj" path="res://ball.tscn" id="2_u2eu2"]
+[ext_resource type="Script" path="res://cursorScript.gd" id="2_2glq3"]
+[ext_resource type="Texture2D" uid="uid://c7wjkoxa137wo" path="res://icons/Sushi0.svg" id="3_ln5yu"]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="World" type="Sprite2D" parent="."]
 position = Vector2(360, 640)
 texture = ExtResource("1_y5nhy")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="World"]
 visible = false
 position = Vector2(-360, 7)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(34, 2, 35, 601, 687, 601, 688, -1, 720, 0, 720, 633, 0, 633, 0, 0)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("2_u2eu2")]
-position = Vector2(351, 309)
+[node name="Cursor" type="Node2D" parent="."]
+position = Vector2(365, 260)
+script = ExtResource("2_2glq3")
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("2_u2eu2")]
-position = Vector2(381, 218)
+[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_ln5yu")
