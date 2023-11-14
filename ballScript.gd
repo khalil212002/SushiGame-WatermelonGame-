@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const areaSize = 5
-const growSize = 0.02
+const growSize = 1.5
 const imageName = 'res://icons/Sushi'
 const imageFormat = '.svg'
 const numberOfImages = 6
@@ -22,7 +22,7 @@ func _grow():
 	if(level < numberOfImages - 1):
 		level += 1
 		get_node("CollisionShape2D/Sprite2D").texture = load(imageName + str(level) + imageFormat)
-		get_node("CollisionShape2D").scale += Vector2.ONE * growSize
+		get_node("CollisionShape2D").scale *= growSize
 		_update_area_collision()
 		mass += 1
 	else:
