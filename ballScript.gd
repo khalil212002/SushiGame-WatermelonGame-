@@ -50,6 +50,6 @@ func _kill():
 
 func _on_area_2d_area_entered(area):
 	var other = area.get_owner()
-	if(alive and other.get_script().get_path() == "res://ballScript.gd"):
+	if(alive and other.get_script().get_path() == "res://ballScript.gd" and other.level == level):
 		other._kill()
 		_grow()
