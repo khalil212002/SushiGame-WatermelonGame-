@@ -27,8 +27,13 @@ func _grow():
 		mass += 1
 	else:
 		level += 0
+<<<<<<< Updated upstream
 		get_node("CollisionShape2D/Sprite2D").texture = load(imageName + str(level) + imageFormat)
 		get_node("CollisionShape2D").scale += Vector2.ONE * (-growSize) * (numberOfImages - 1)
+=======
+		get_node("CollisionShape2D/Sprite2D").texture = load(Globals.imageName + str(level) + Globals.imageFormat)
+		get_node("CollisionShape2D").scale = Vector2.ONE * Globals.ballStartScale
+>>>>>>> Stashed changes
 		_update_area_collision()
 		mass += 1
 	
@@ -53,3 +58,10 @@ func _on_area_2d_area_entered(area):
 	if(alive and other.get_script().get_path() == "res://ballScript.gd" and other.level == level):
 		other._kill()
 		_grow()
+<<<<<<< Updated upstream
+=======
+		if(level > Globals.maxLevel):
+			Globals.maxLevel = level
+	for coli in get_colliding_bodies():
+		_on_area_2d_area_entered(coli)
+>>>>>>> Stashed changes
