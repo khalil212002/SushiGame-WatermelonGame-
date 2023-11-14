@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://duth8emiaue0q"]
+
+[ext_resource type="Texture2D" uid="uid://cqdomjpb8k408" path="res://background.png" id="1_y5nhy"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+texture = ExtResource("1_y5nhy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-360, 7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(34, 2, 35, 601, 687, 601, 688, -1, 720, 0, 720, 633, 0, 633, 0, 0)
