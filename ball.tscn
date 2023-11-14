@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://co5lngcdyl3kj"]
+
+[ext_resource type="Texture2D" uid="uid://c7wjkoxa137wo" path="res://icons/Sushi0.svg" id="1_y2uea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ownfc"]
+radius = 264.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ivap"]
+radius = 24.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.08, 0.08)
+shape = SubResource("CircleShape2D_ownfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_y2uea")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8ivap")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://duth8emiaue0q"]
+[gd_scene load_steps=3 format=3 uid="uid://duth8emiaue0q"]
 
 [ext_resource type="Texture2D" uid="uid://cqdomjpb8k408" path="res://background.png" id="1_y5nhy"]
+[ext_resource type="PackedScene" uid="uid://co5lngcdyl3kj" path="res://ball.tscn" id="2_u2eu2"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -15,3 +16,6 @@ position = Vector2(-360, 7)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(34, 2, 35, 601, 687, 601, 688, -1, 720, 0, 720, 633, 0, 633, 0, 0)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_u2eu2")]
+position = Vector2(351, 309)
