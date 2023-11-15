@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duth8emiaue0q"]
+[gd_scene load_steps=7 format=3 uid="uid://duth8emiaue0q"]
 
 [ext_resource type="Script" path="res://mainSceneScript.gd" id="1_jxj3l"]
 [ext_resource type="Texture2D" uid="uid://cqdomjpb8k408" path="res://background.png" id="1_y5nhy"]
 [ext_resource type="Script" path="res://cursorScript.gd" id="2_2glq3"]
 [ext_resource type="PackedScene" uid="uid://co5lngcdyl3kj" path="res://ball.tscn" id="2_u2eu2"]
+[ext_resource type="Texture2D" uid="uid://c7wjkoxa137wo" path="res://icons/Sushi0.svg" id="5_7dx46"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_03586"]
 font_size = 40
@@ -39,8 +40,13 @@ freeze = true
 
 [node name="Label" type="Label" parent="."]
 offset_right = 720.0
-offset_bottom = 157.0
+offset_bottom = 116.0
 text = "0"
 label_settings = SubResource("LabelSettings_03586")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NextBall" type="Sprite2D" parent="."]
+position = Vector2(55, 55)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_7dx46")

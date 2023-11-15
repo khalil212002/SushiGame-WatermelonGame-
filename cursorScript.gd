@@ -8,6 +8,9 @@ var rightBoundary:float
 var hasBallChild = true
 var addChildTimer = Timer.new()
 
+var nextBall = 0
+var currentBall = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rayCast = get_node("RayCast2D")
@@ -28,9 +31,8 @@ func _process(delta):
 func _add_child_ball():
 	var newBall = preload("res://ball.tscn").instantiate()
 	newBall.freeze = true
-	var maxRand = min(Globals.maxLevel, 3)
-	var grow = min(randi_range(0, maxRand), randi_range(0, maxRand))
-	for i in range(grow):
+	
+	for i in range(currentBall):
 		newBall._grow()
 	add_child(newBall)
 	_calculate_boundaries()
@@ -52,6 +54,11 @@ func _drop_ball():
 	ball.freeze = false
 	hasBallChild = false
 	addChildTimer.start()
+	
+	currentBall = nextBall
+	var maxRand = min(Globals.maxLevel, 3)
+	nextBall = min(randi_range(0, maxRand), randi_range(0, maxRand))
+	get_parent().get_node("NextBall").texture = load(Globals.imageName + str(nextBall) + Globals.imageFormat)
 
 var dragging = false
 func _input(event):
