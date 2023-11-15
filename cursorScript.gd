@@ -6,6 +6,7 @@ var line2d:Line2D
 var leftBoundary:float
 var rightBoundary:float
 var hasBallChild = true
+var addChildTimer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,12 +14,23 @@ func _ready():
 	line2d = get_node("Line2D")
 	line2d.hide()
 	_calculate_boundaries()
+	
+	addChildTimer.connect("timeout", _add_child_ball)
+	addChildTimer.wait_time = 0.5
+	addChildTimer.one_shot = true
+	add_child(addChildTimer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(dragging):
 		line2d.points[1].y = rayCast.get_collision_point().y - global_position.y
 		
+func _add_child_ball():
+	var newBall = preload("res://ball.tscn").instantiate()
+	newBall.freeze = true
+	add_child(newBall)
+	hasBallChild = true
+
 func _calculate_boundaries():
 	var ball = get_node("RigidBody2D/CollisionShape2D/Sprite2D")
 	var ballCollision = get_node("RigidBody2D/CollisionShape2D")
@@ -33,6 +45,7 @@ func _drop_ball():
 	get_owner().add_child(ball)
 	ball.freeze = false
 	hasBallChild = false
+	addChildTimer.start()
 
 var dragging = false
 func _input(event):
