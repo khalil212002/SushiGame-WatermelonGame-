@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqdomjpb8k408" path="res://background.png" id="1_y5nhy"]
 [ext_resource type="Script" path="res://cursorScript.gd" id="2_2glq3"]
-[ext_resource type="Texture2D" uid="uid://c7wjkoxa137wo" path="res://icons/Sushi0.svg" id="3_ln5yu"]
+[ext_resource type="PackedScene" uid="uid://co5lngcdyl3kj" path="res://ball.tscn" id="2_u2eu2"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -26,9 +26,8 @@ script = ExtResource("2_2glq3")
 points = PackedVector2Array(0, 0, 0, 0)
 width = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_ln5yu")
-
 [node name="RayCast2D" type="RayCast2D" parent="Cursor"]
 target_position = Vector2(0, 990)
+
+[node name="RigidBody2D" parent="Cursor" instance=ExtResource("2_u2eu2")]
+freeze = true
