@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c7wjkoxa137wo" path="res://icons/Sushi0.svg" id="1_y2uea"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f0h7y"]
-friction = 0.0
+friction = 0.1
+rough = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ownfc"]
 radius = 260.0
