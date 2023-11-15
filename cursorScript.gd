@@ -48,6 +48,7 @@ func _drop_ball():
 	ball.get_parent().remove_child(ball)
 	ball.global_position = globalPos
 	get_owner().add_child(ball)
+	Globals._update_score(ball.level + 1)
 	ball.freeze = false
 	hasBallChild = false
 	addChildTimer.start()

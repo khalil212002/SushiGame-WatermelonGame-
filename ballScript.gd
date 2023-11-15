@@ -20,6 +20,8 @@ func _process(delta):
 	pass
 	
 func _grow():
+	Globals._update_score((level + 1) * 10)
+	
 	if(level < numberOfImages - 1):
 		level += 1
 		get_node("CollisionShape2D/Sprite2D").texture = load(imageName + str(level) + imageFormat)
