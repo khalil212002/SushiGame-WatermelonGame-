@@ -33,6 +33,9 @@ func _grow():
 
 		_update_area_collision()
 		mass = 1
+		
+	for coli in get_node("Area2D").get_overlapping_areas():
+		_on_area_2d_area_entered(coli)
 	
 func _update_area_collision():
 	var areaCollision = get_node("Area2D/CollisionShape2D")
@@ -40,8 +43,6 @@ func _update_area_collision():
 	var spriteCollision = get_node("CollisionShape2D")
 	
 	var newShape = CircleShape2D.new()
-	print_debug(sprite.texture.get_width())
-	print_debug(sprite.scale.y)
 	newShape.radius = sprite.texture.get_width() * spriteCollision.scale.y / 2 + areaSize
 	areaCollision.shape = newShape
 
@@ -57,6 +58,4 @@ func _on_area_2d_area_entered(area):
 		_grow()
 		if(level > Globals.maxLevel):
 			Globals.maxLevel = level
-	for coli in get_colliding_bodies():
-		_on_area_2d_area_entered(coli)
 
