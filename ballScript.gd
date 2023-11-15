@@ -25,7 +25,7 @@ func _grow():
 		get_node("CollisionShape2D/Sprite2D").texture = load(imageName + str(level) + imageFormat)
 		get_node("CollisionShape2D").scale *= growSize
 		_update_area_collision()
-		mass += 1
+		mass += 3
 	else:
 		level = 0
 		get_node("CollisionShape2D/Sprite2D").texture = load(imageName + str(level) + imageFormat)
