@@ -28,7 +28,12 @@ func _process(delta):
 func _add_child_ball():
 	var newBall = preload("res://ball.tscn").instantiate()
 	newBall.freeze = true
+	var maxRand = min(Globals.maxLevel, 3)
+	var grow = min(randi_range(0, maxRand), randi_range(0, maxRand))
+	for i in range(grow):
+		newBall._grow()
 	add_child(newBall)
+	_calculate_boundaries()
 	hasBallChild = true
 
 func _calculate_boundaries():
